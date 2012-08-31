@@ -48,6 +48,10 @@ follows:
     [Default Applications]
     x-scheme-handler/http=firefox.desktop
 
+NOTE from Raman Gupta: Thunderbird 14 does not seem to use the XDG
+MIME database. See the note below under mimeTypes.rdf for an alternative
+solution.
+
 #### Gconf (Thunderbird > ~3 with GNOME)
 
 When running in a GNOME environment (if the GNOME libraries are present),
@@ -109,8 +113,24 @@ stored in the profile directory (usually
 `~/.mozilla/thunderbird/XXXXXXXX.default/mimeTypes.rdf` where Xs are replaced
 by random characters and `default` may be replaced by another profile name, if
 named differently) and determines the "Helper Applications" which are used to
-open external content based on the MIME type.  I have not personally seen any
-of the URL pseudo-MIME types appear in this file, but it may be worth checking.
+open external content based on the MIME type.
+
+If the "http" and "https" content types are already defined, the settings will
+be saved in the mimeTypes.rdf file. In recent versions of Thunderbird, 
+`Edit -> Preferences -> Attachments -> Incoming` shows these content types.
+
+If the instructions given above do not work, you can explicitly specify the
+protocol handlers via the Thunderbird mimeTypes.rdf. To do this:
+
+1. Go to `Edit -> Preferences -> Advanced -> Config Editor`
+2. Change the following values to `true` by double-clicking on them:
+ * network.protocol-handler.warn-external.http
+ * network.protocol-handler.warn-external.https
+3. Click on an `http` and `https` link in Thunderbird. Thunderbird will prompt
+for the application to use to open the link, and to remember the selection.
+Choose `/usr/bin/xdg-open` to delegate to your desktop manager's default browser.
+
+Thunderbird will update the mimeTypes.rdf file with the selected application.
 
 ### Proper Documentation
 
