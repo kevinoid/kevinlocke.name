@@ -14,8 +14,10 @@ IMPP;TYPE=HOME:xmpp:kevin@kevinlocke.name
 X-GOOGLE-TALK;TYPE=HOME:kevin@kevinlocke.name
 X-GTALK;TYPE=HOME:kevin@kevinlocke.name
 X-JABBER;TYPE=HOME:kevin@kevinlocke.name
-IMPP;TYPE=HOME:irc://irc.freenode.net/kevinoid,isnick
-X-IRC;TYPE=HOME:irc://irc.freenode.net/kevinoid,isnick
+IMPP;TYPE=HOME:irc://irc.libera.chat/kevinoid,isnick
+X-IRC;TYPE=HOME:irc://irc.libera.chat/kevinoid,isnick
+IMPP;TYPE=HOME:irc://irc.oftc.net/kevinoid,isnick
+X-IRC;TYPE=HOME:irc://irc.oftc.net/kevinoid,isnick
 TZ:VALUE=text:-07:00; MST; Denver/North America
 LANG:en
 X-EVOLUTION-BLOG-URL:https://kevinlocke.name/bits/
