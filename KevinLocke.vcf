@@ -10,10 +10,6 @@ N:Locke;Kevin;;;
 EMAIL;TYPE=INTERNET;TYPE=HOME:kevin@kevinlocke.name
 KEY;TYPE=PGP:https://kevinlocke.name/pgpkey-498A12A1584EA6F9.asc
 X-MOZILLA-HTML:FALSE
-IMPP;TYPE=HOME:xmpp:kevin@kevinlocke.name
-X-GOOGLE-TALK;TYPE=HOME:kevin@kevinlocke.name
-X-GTALK;TYPE=HOME:kevin@kevinlocke.name
-X-JABBER;TYPE=HOME:kevin@kevinlocke.name
 IMPP;TYPE=HOME:irc://irc.libera.chat/kevinoid,isnick
 X-IRC;TYPE=HOME:irc://irc.libera.chat/kevinoid,isnick
 IMPP;TYPE=HOME:irc://irc.oftc.net/kevinoid,isnick
