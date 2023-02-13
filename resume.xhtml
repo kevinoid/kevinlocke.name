@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <!--
+Thanks for looking at the source of my resume!  I wrote it by hand in Vim.
+I'm impressed by your interest.  I'd encourage you to let me know you saw this!
+  -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kevin Locke - R&#xE9;sum&#xE9;</title>
+  <meta name="copyright" content="&#xA9; 2023 Kevin Locke &lt;kevin@kevinlocke.name&gt;" />
+  <meta name="date" content="2023-02-12 14:11:24-07:00"/>
+  <style>
+a {
+  /* Note: Normally I would advocate for links to be visibly different from
+     unclickable text.  In this case, it is too distracting and detracts from
+     the primary purpose of the page. */
+  color: inherit;
+  text-decoration: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1 {
+  clear: both;
+  font-size: 2em;		/* Firefox default */
+  margin-bottom: 0.67em;	/* Firefox default */
+  text-align: center;
+}
+h2 {
+  clear: both;
+  border-bottom: thin solid black;
+  margin: 0.1em 0;
+}
+h3 {
+  margin: 0.1em 0;
+}
+p {
+  margin: 0.1em 0 1em 0;
+}
+ul {
+  margin-top: 0.1em;
+}
+p + ul,
+ul + p {
+  margin-top: -0.5em;
+}
+.h1-subtitle {
+  font-size: 1.5em;
+  font-style: italic;
+  margin-top: -0.89em;	/* Tied to h1 margin-bottom */
+  margin-bottom: 0;
+  text-align: center;
+}
+.expdates {
+  float: right;
+  font-weight: normal;
+  font-style: oblique;
+}
+#leftheader {
+  float: left;
+  text-align: left;
+}
+#rightheader {
+  float: right;
+  text-align: right;
+}
+@media print {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    font-family: serif;
+    font-size: 11.5pt;
+  }
+  h1 {
+    clear: none;
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+  h2, .h1-subtitle {
+    clear: none;
+    font-size: 1.1rem;
+  }
+  /* .expdates size must match h3 for baseline alignment */
+  h3, .expdates {
+    font-size: 1rem;
+  }
+  /* Prevent margin causing blank additional page */
+  ul:last-child {
+    margin-bottom: 0
+  }
+  ul:last-child, li:last-child {
+    margin-bottom: 0
+  }
+}
+@page {
+  margin: 0.5in;
+}
+  </style>
+</head>
+<body>
+  <div id="leftheader">
+    <a href="https://kevinlocke.name">https://kevinlocke.name</a><br />
+  </div>
+  <div id="rightheader">
+    <a href="mailto:kevin@kevinlocke.name">kevin@kevinlocke.name</a><br />
+  </div>
+
+  <h1>Kevin Locke</h1>
+  <p class="h1-subtitle">Senior Software Engineer and Consultant</p>
+
+  <h2>Summary</h2>
+  <p>A motivated pragmatist with a strong work ethic and a detail-oriented
+  approach.  Excels across a variety of roles and technologies; from
+  architect to developer to sysadmin, front-end to back-end, Windows to
+  Unix-likes to Android, with the flexibility to do whatever is needed
+  to get the job done in the best way possible.  Works well in small-teams,
+  early-stage startups, and independently, where productivity and reliability
+  are paramount.</p>
+
+  <h2>Professional Experience</h2>
+
+  <h3><span class="exptitle">Independent Developer and Consultant</span>
+  <span class="expdates">August 2016 &#x2013; Present</span></h3>
+  <p>Worked with many clients to identify, design, develop, and maintain a
+    variety of solutions to address diverse business needs.  Notable
+    achievements include:</p>
+  <ul>
+    <li>Designed and prototyped a web-based construction work order management
+      system using
+      <a href="https://learn.microsoft.com/aspnet/core/mvc/overview?view=aspnetcore-2.0">ASP.NET
+        Core MVC 2</a> with
+      <a href="https://learn.microsoft.com/ef/core/">Entity Framework Core</a>
+      (<a href="https://dotnet.microsoft.com/languages/csharp">C#</a>).
+      Subsequently facilitated outsourced development through
+      requirements analysis, iterative design and evaluation, and user
+      testing.</li>
+    <li>Developed a web-based payroll module for an existing home health care
+      agency management system using
+      <a href="https://learn.microsoft.com/aspnet/web-forms/what-is-web-forms">ASP.NET
+        WebForms</a>
+      (<a href="https://dotnet.microsoft.com/languages/csharp">C#</a>).</li>
+    <li>Migrated an ASP.NET project from an ad-hoc source-based deployment
+      system to pre-compiled
+      <a href="https://learn.microsoft.com/iis/publish/using-web-deploy/introduction-to-web-deploy">WebDeploy</a>
+      to facilitate automation and pre-deployment checks, significantly
+      reducing issues for developers and users.</li>
+    <li>Authored <a href="https://www.openapis.org/">OpenAPI</a> definitions
+      for multiple REST APIs
+      (<a href="https://github.com/kevinoid/appveyor-swagger/">AppVeyor CI</a>,
+      <a href="https://www.bamboohr.com/">BambooHR</a>,
+      <a href="https://www.procore.com/">Procore</a> (partial)) with client
+      code generation for
+      <a href="https://dotnet.microsoft.com/languages/csharp">C#</a> using
+      <a href="https://github.com/Azure/autorest">AutoRest</a> and
+      <a href="https://www.java.com/">Java</a> using
+      <a href="https://openapi-generator.tech/">OpenAPI Generator</a>.</li>
+    <li>Developed tools for data synchronization to integrate
+      <a href="https://www.bamboohr.com/">BambooHR</a> (via REST API) and
+      <a href="https://www.viewpoint.com/products/spectrum">Viewpoint Spectrum</a>
+      (via XML Web Services,
+      <a href="https://en.wikipedia.org/wiki/Web_Services_Description_Language"><abbr title="Web Services Description Language">WSDL</abbr></a>,
+      and <a href="https://en.wikipedia.org/wiki/SQL"><abbr title="Structured Query Language">SQL</abbr></a>), including sophisticated reconciliation algorithms.</li>
+    <li>Developed an optimized string edit distance
+      (<a href="https://en.wikipedia.org/wiki/Longest_common_subsequence">Longest
+        Common Subsequence</a>,
+      <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein</a>,
+      <a href="https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance">Damerau-Levenshtein</a>)
+      library in <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a>
+      with <a href="https://www.python.org/">Python</a> bindings.
+      <a href="https://ccodearchive.net/info/edit_distance.html">Contributed the
+        library to <abbr title="Comprehensive C Archive Network">CCAN</abbr></a>.</li>
+    <li>Developed Excel-based job planning and analysis platforms integrated
+      with <a href="https://www.viewpoint.com/products/spectrum">Viewpoint Spectrum</a> via <a href="https://en.wikipedia.org/wiki/SQL"><abbr title="Structured Query Language">SQL</abbr></a>.</li>
+    <li>Developed Excel-based <abbr title="Profit and Loss">P&amp;L</abbr>
+      analysis workbooks integrated with
+      <a href="https://www.jonasconstruction.com/products/enterprise/">Jonas
+        Enterprise</a> via <a href="https://en.wikipedia.org/wiki/SQL"><abbr title="Structured Query Language">SQL</abbr></a>.</li>
+    <li>Developed web-based vehicle inspection forms with PDF-to-email
+      rendering for a vehicle fleet in <a href="https://www.php.net/">PHP</a>.</li>
+  </ul>
+  <p>Honored to assist with hiring in-house developers, migrating projects to
+    collaboration platforms (<a href="https://github.com/">GitHub</a>,
+    <a href="https://azure.microsoft.com/products/devops/">Azure DevOps</a>),
+    co-developing with and mentoring junior developers.</p>
+
+  <h3><span class="exptitle">Director of Engineering &#x2014;
+    <a href="https://quantpost.com">Quantpost</a></span>
+  <span class="expdates">May 2013 &#x2013; June 2015</span></h3>
+  <p>Designed, built, maintained, and administrated multiple iterations of stock
+  option analysis platform, infrastructure, and tooling around an existing C++
+  core as part of a small team.  Primarily used
+  <a href="https://www.mongodb.com/">MongoDB</a>,
+  <a href="https://expressjs.com/">Express.js</a>,
+  <a href="https://angular.io/">AngularJS</a>,
+  and <a href="https://nodejs.org/">Node.js</a>
+  (<a href="https://en.wikipedia.org/wiki/MEAN_(solution_stack)">MEAN Stack</a>) on
+  <a href="https://cloud.google.com/compute/">Google Compute Engine</a> with
+  <a href="https://www.ansible.com/">Ansible</a> automation.
+  Managed contract developers for additional UI, graphical design, and
+  specialized front-end tasks.  Successfully launched multiple public versions
+  of the product with very positive user feedback.  Notable achievements
+  include:</p>
+  <ul>
+    <li>Co-developed multiple iterations of public website, webapp, and REST
+      API, from scratch, in coordination with other developers and
+      designers.</li>
+    <li>Developed <a href="https://www.mongodb.com/">MongoDB</a>-based task
+      queue with C++ and <a href="https://nodejs.org/">Node.js</a> clients
+      for managing portfolio optimization requests in real time.</li>
+    <li>Developed <a href="https://www.java.com/">Java</a>-based consumer for
+      <a href="https://dxfeed.com/">Devexperts dxFeed</a> market data which
+      prepared and stored data for real-time portfolio analysis by the C++
+      core.</li>
+    <li>Managed development of <a href="https://d3js.org/">D3</a>
+      visualization of optimization results and payout curves across
+      predicted probability curves.</li>
+    <li>Developed <a href="https://www.ansible.com/">Ansible</a> automation
+      scripts for deploying all
+      <a href="https://cloud.google.com/compute/"><abbr title="Google Compute Engine">GCE</abbr></a>
+      machines and services from scratch.</li>
+    <li>Contributed to solving challenging performance issues with multi-GB
+      matrix operations using
+      <a href="https://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms"><abbr title="Basic Linear Algebra Subprograms">BLAS</abbr></a>
+      and <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html">Intel
+        <abbr title="Math Kernel Library">MKL</abbr></a> on
+      <a href="https://cloud.google.com/compute/"><abbr title="Google Compute Engine">GCE</abbr></a>
+      to deliver complex portfolio optimizations in seconds.</li>
+    <li>Created lead generation tools for scraping
+      <a href="https://twitter.com/">Twitter</a> follower data and
+      applying machine learning techniques.</li>
+    <li>Created <a href="https://twitter.com/">Twitter</a> chatbot to provide
+      real-time optimizations on demand.</li>
+  </ul>
+
+  <h3><span class="exptitle">Co-founder, CEO &#x2014;
+    <a href="https://digitalenginesoftware.com">Digital Engine Software, LLC</a></span>
+  <span class="expdates">June 2009 &#x2013; December 2011</span></h3>
+  <p>Built a business to design, create, and customize a wide variety of software to
+  meet the needs of a diverse regional clientele.  Coordinated, planned, and
+  conducted operations to successfully promote and grow the business,
+  determine and fulfill client needs, and produce quality software.  Notable
+  achievements include:</p>
+  <ul>
+    <li>Created web-based information management system for a home health
+care provider serving over 1000 active clients and employees, across 10 regional
+offices.  Significantly improved information sharing between offices, data entry
+efficiency, and ability to gather operational analytics.</li>
+    <li>Configured, deployed, and maintained
+      <a href="https://learn.microsoft.com/sql/relational-databases/replication/merge/merge-replication">MS
+        SQL Server Merge Replication</a> to allow offline data entry and
+      retrieval.  Overcame significant technical obstacles on an ongoing
+      basis.</li>
+    <li>Conducted environmental monitoring database consolidation and
+    migration project merging structure and data for millions of records
+    of field data from
+    <a href="https://www.microsoft.com/microsoft-365/access">Access</a> to
+    <a href="https://www.microsoft.com/sql-server/">SQL Server</a>.</li>
+    <li>Developed and integrated
+      <a href="https://en.wikipedia.org/wiki/IPsec">IPsec</a> support for
+      <a href="https://openwrt.org/">OpenWrt</a> router firmware
+      project.</li>
+    <li>Created prototype for a historical information
+    exploration website using
+    <a href="https://developers.google.com/maps/">Google Maps</a>.</li>
+    <li>Implemented stream <!--location -->prediction algorithm as an
+      <a href="https://www.arcgis.com/">ArcGIS</a> module for analysis of
+      digital elevation model
+      <a href="https://en.wikipedia.org/wiki/Lidar">LIDAR</a> data.</li>
+  </ul>
+
+  <h3><span class="exptitle">Technician/Programmer &#x2014;
+      Computer Troubleshooters</span>
+  <span class="expdates">April 2008 &#x2013; May 2009</span></h3>
+  <p>Applied sound investigative techniques to isolate and resolve a wide
+  variety of complex technical problems across several industries and systems.
+  Designed, setup, and administered multiple Windows domains for small
+  businesses, including
+  <a href="https://web.archive.org/web/20100228172818/http://www.microsoft.com:80/windowsserver2003/sbs/default.mspx"><abbr title="Small Business Server">SBS</abbr> 2003</a>,
+  <a href="https://web.archive.org/web/20100328114057/http://www.microsoft.com:80/sbs/en/us/default.aspx">2008</a>,
+  <a href="https://www.microsoft.com/microsoft-365/exchange/">Exchange</a>, and
+  <a href="https://www.microsoft.com/sql-server/">SQL Server</a> products.
+  Created and tailored utility programs to facilitate ongoing maintenance and
+  to speed recurring tasks for clients.</p>
+
+  <h3><span class="exptitle">CS Intern &#x2014;
+      <a href="http://www.wpafb.af.mil/afrl/">Air Force Research Lab</a></span>
+    <span class="expdates">Summer 2007</span></h3>
+  <p>Contributed to design and implementation of
+  <a href="https://www.java.com/">Java</a>-based wargame development
+  platform and Asynchronous Chess (an
+  <abbr title="Air Force Research Lab">AFRL</abbr>-invented strategy game) AI research
+  projects.  Achievements include:</p>
+  <ul>
+    <li>Development of a 3D chess-playing agent and a viewer supporting
+    animations and status tracking in real time.</li>
+    <li>Design and preliminary implementation of environment system
+    for the
+    <a href="https://stottlerhenke.com/solutions/education-and-training/simventive-a-toolkit-for-building-instructional-games/">SimVentive</a>
+    wargame development platform.</li>
+    <li>Presented
+      <a href="https://stottlerhenke.com/solutions/education-and-training/simventive-a-toolkit-for-building-instructional-games/">SimVentive</a>
+      work at
+      <a href="https://web.archive.org/web/20150910043618/http://www.scs.org/confernc/hsc/hsc07/hsc07.htm">Huntsville
+        Simulation Converence 2007</a></li>
+  </ul>
+
+  <h3><span class="exptitle">GIS Intern &#x2014;
+      <a href="https://gvlt.org/">Gallatin Valley Land Trust</a></span>
+    <span class="expdates">Summer 2006</span></h3>
+  <p>Gathered and manipulated field data to create and update trail maps
+  using <a href="https://www.arcgis.com/">ArcGIS</a>.  Implemented
+  <a href="https://developers.google.com/maps/">Google Maps</a>-based
+  interactive online map of
+  <abbr title="Gallatin Valley Land Trust">GVLT</abbr>'s conservation
+  easements.</p>
+
+  <h2>Educational Experience</h2>
+  <h3><span class="exptitle">B.S. in Computer Science &#x2014;
+      <a href="https://www.cornell.edu/">Cornell University</a></span>
+    <span class="expdates">December 2007</span></h3>
+  <ul>
+    <li>Graduated Magna Cum Laude from Cornell University College of Engineering.</li>
+    <li>Cumulative GPA of 3.77.  Dean's List for Spring 2007, Fall 2006, Spring 2006.</li>
+    <li>Specialization in mathematics:  Cryptography, Statistics, Discrete Mathematics.</li>
+    <li>Notable advanced courses: System Security, Web Info. Systems, Database Systems, Computer Networks.</li>
+  </ul>
+
+  <h2>Technologies</h2>
+  <ul>
+    <li>Most proficient in
+      <a href="https://dotnet.microsoft.com/languages/csharp">C#</a>,
+      <a href="https://www.java.com/">Java</a>,
+      <a href="https://www.python.org/">Python</a>,
+      <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a>,
+      <a href="https://developer.mozilla.org/docs/Web/javascript">JavaScript</a>,
+      <a href="https://en.wikipedia.org/wiki/SQL"><abbr title="Structured Query Language">SQL</abbr></a>,
+      and
+      <a href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html">shell scripting</a>
+      on Linux and Windows systems.  Some experience with a multitude of
+      other languages, platforms, and libraries.</li>
+    <li>Extensive experience with
+      <a href="https://www.debian.org/">Debian Linux</a> on mobile, desktop,
+      and server platforms.</li>
+    <li>Enjoy learning new languages, tools, techniques, and platforms
+      suitable for a given problem.</li>
+  </ul>
+</body>
+</html>
+<!-- vim: set sts=2 sw=2 et : -->

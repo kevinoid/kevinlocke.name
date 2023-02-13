@@ -48,10 +48,10 @@ IndexOptions +XHTML
 
 # Set common security/compatibility headers
 Header set Content-Security-Policy: "default-src 'self'; frame-ancestors 'self'; form-action 'self'; block-all-mixed-content; report-uri /csp-report"
-# Allow inline styles in SVG files and javadoc/phpdoc
+# Allow inline styles in SVG files and javadoc/phpdoc and my resume
 # Note:  resp('Content-Type') is not set by mod_negotiation.c.
 #        Use %{CONTENT_TYPE} instead.
-Header edit Content-Security-Policy: "$" "; style-src 'self' 'unsafe-inline'" "expr=%{CONTENT_TYPE} =~ m#^image/svg\+xml# || %{REQUEST_URI} =~ m#(javadoc|phpdoc)\/#"
+Header edit Content-Security-Policy: "$" "; style-src 'self' 'unsafe-inline'" "expr=%{CONTENT_TYPE} =~ m#^image/svg\+xml# || %{REQUEST_URI} =~ m#(javadoc|phpdoc)\/# || %{REQUEST_URI} =~ m#/resume#"
 # Allow inline scripts for javadoc
 Header edit Content-Security-Policy: "$" "; script-src 'self' 'unsafe-inline'" "expr=%{REQUEST_URI} =~ m#javadoc\/#"
 # Allow unsafe-inline for PDFs viewed in-browser <https://crbug.com/271452>
