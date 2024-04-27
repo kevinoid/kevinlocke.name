@@ -502,7 +502,7 @@ The Windows driver has released with several severe known bugs, such as:
 - [Doesn't work with `iommu_platform=on`](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/483)
 
 My offer to assist with adding tests
-([virtio-win/kvm-guest-drivers-windows#531](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/531)
+([virtio-win/kvm-guest-drivers-windows#531](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/531))
 has seen very little interest or action.  It's not clear to me who's working
 on virtio-fs and how much interest it has at the moment.
 
@@ -641,7 +641,7 @@ For these systems, the drivers must be installed manually.
 #### virtio-fs
 
 To use virtio-fs for file sharing, in addition to installing the `viofs`
-driver, complete the following steps (based on a comment by
+driver, complete the following steps (based on [a comment by
 @FailSpy](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/126#issuecomment-667432487)):
 
 1. Install [WinFSP](https://github.com/billziss-gh/winfsp/releases).
@@ -650,7 +650,7 @@ driver, complete the following steps (based on a comment by
 3. Ensure the `VirtioFSService` created by virtio-win-drivers-installer is
    stopped and has Startup Type: Manual or Disabled.  (Enabling this service
    would work, but would make shared files [only accessible to elevated
-   processes](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/126#issuecomment-678895188).
+   processes](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/126#issuecomment-678895188)).
 4. Create a scheduled task to run `virtiofs.exe` at logon using the following
    PowerShell:
    ```pwsh
