@@ -279,6 +279,18 @@ With this configuration we have eliminated all of the previous issues and
 achieved the desired result.  It can also be extend to include additional
 encodings easily, as we will demonstrate.
 
+
+### An Alternative Fix
+
+[Leo Bicknell](http://www.ufp.org/~bicknell/) suggested an alternative fix for
+the incorrect `.gz` type:  Use a different extension!  For example, by using
+the `.gzip` extension with `AddEncoding gzip .gzip` and saving compressed
+files with this extension.  This has the advantage that files saved with the
+`.gz` extension are served as `application/gzip` as intended, and only files
+which should be transparently decompressed are served with `Content-Encoding:
+gzip`.
+
+
 ### Adding Brotli
 
 Now that we have found a working solution using `MultiViews`, lets add support
@@ -381,5 +393,10 @@ Otherwise, best of luck serving pre-compressed files with Apache!
   uncompressed files being non-negotiated.
 * Added more headings and moved brotli into its own section to make the post
   easier to skim.
+
+### 2024-05-16
+
+* Added [An Alternative Fix](#an-alternative-fix) section suggested by
+  [Leo Bicknell](http://www.ufp.org/~bicknell/).
 
 [^negotiatetype]: Although type negotiation is not often used for stylesheets, it is currently used to [negotiate WebP](https://developers.google.com/speed/webp/faq?hl=en#server-side_content_negotiation_via_accept_headers), [XHTML]({% post_url 2012-07-20-serving-xhtml-with-apache-multiviews %}), and in some REST APIs.
