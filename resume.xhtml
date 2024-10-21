@@ -9,8 +9,8 @@ I'm impressed by your interest.  I'd encourage you to let me know you saw this!
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kevin Locke - R&#xE9;sum&#xE9;</title>
-  <meta name="copyright" content="&#xA9; 2023 Kevin Locke &lt;kevin@kevinlocke.name&gt;" />
-  <meta name="date" content="2023-02-12 14:11:24-07:00"/>
+  <meta name="copyright" content="&#xA9; 2024 Kevin Locke &lt;kevin@kevinlocke.name&gt;" />
+  <meta name="date" content="2024-10-20 18:07:48-06:00"/>
   <style>
 a {
   /* Note: Normally I would advocate for links to be visibly different from
@@ -31,20 +31,21 @@ h1 {
 h2 {
   clear: both;
   border-bottom: thin solid black;
-  margin: 0.1em 0;
+  margin: 0.5em 0 0.1em 0;
 }
 h3 {
   margin: 0.1em 0;
 }
 p {
-  margin: 0.1em 0 1em 0;
+  margin: 0.1em 0 0.5em 0;
 }
 ul {
   margin-top: 0.1em;
+  margin-bottom: 0.5em;
 }
 p + ul,
 ul + p {
-  margin-top: -0.5em;
+  margin-top: -0.25em;
 }
 .h1-subtitle {
   font-size: 1.5em;
@@ -52,6 +53,9 @@ ul + p {
   margin-top: -0.89em;	/* Tied to h1 margin-bottom */
   margin-bottom: 0;
   text-align: center;
+}
+.h1-subtitle + h2 {
+  margin-top: 0;
 }
 .expdates {
   float: right;
@@ -67,6 +71,9 @@ ul + p {
   text-align: right;
 }
 @media print {
+  abbr {
+    text-decoration: none;
+  }
   html, body {
     margin: 0;
     padding: 0;
@@ -104,22 +111,23 @@ ul + p {
 <body>
   <div id="leftheader">
     <a href="https://kevinlocke.name">https://kevinlocke.name</a><br />
+    <a href="https://github.com/kevinoid">https://github.com/kevinoid</a>
   </div>
   <div id="rightheader">
-    <a href="mailto:kevin@kevinlocke.name">kevin@kevinlocke.name</a><br />
+    <a href="mailto:kevin@kevinlocke.name">kevin@kevinlocke.name</a>
   </div>
 
   <h1>Kevin Locke</h1>
   <p class="h1-subtitle">Senior Software Engineer and Consultant</p>
 
   <h2>Summary</h2>
-  <p>A motivated pragmatist with a strong work ethic and a detail-oriented
-  approach.  Excels across a variety of roles and technologies; from
+  <p>A generalist with a strong work ethic and a detail-oriented
+  approach.  Excels across a variety of roles and technologies:
   architect to developer to sysadmin, front-end to back-end, Windows to
-  Unix-likes to Android, with the flexibility to do whatever is needed
-  to get the job done in the best way possible.  Works well in small-teams,
-  early-stage startups, and independently, where productivity and reliability
-  are paramount.</p>
+  Unix to Android. Has the flexibility to do whatever is needed
+  to get the job done right.  Extensive experience working
+  independently, in small teams, and early stage startups, where productivity,
+  reliability, and clear communication are paramount.</p>
 
   <h2>Professional Experience</h2>
 
@@ -138,6 +146,11 @@ ul + p {
       Subsequently facilitated outsourced development through
       requirements analysis, iterative design and evaluation, and user
       testing.</li>
+    <li>Automated reconciliation of home healthcare scheduling to meet new compliance
+      requirements in under 2 months, saving tens of employee hours per week across
+      multiple offices using a custom
+      <a href="https://www.selenium.dev/">Selenium</a>-based web scraper and
+      parser to ingest data for custom reporting.</li>
     <li>Developed a web-based payroll module for an existing home health care
       agency management system using
       <a href="https://learn.microsoft.com/aspnet/web-forms/what-is-web-forms">ASP.NET
@@ -148,16 +161,6 @@ ul + p {
       <a href="https://learn.microsoft.com/iis/publish/using-web-deploy/introduction-to-web-deploy">WebDeploy</a>
       to facilitate automation and pre-deployment checks, significantly
       reducing issues for developers and users.</li>
-    <li>Authored <a href="https://www.openapis.org/">OpenAPI</a> definitions
-      for multiple REST APIs
-      (<a href="https://github.com/kevinoid/appveyor-swagger/">AppVeyor CI</a>,
-      <a href="https://www.bamboohr.com/">BambooHR</a>,
-      <a href="https://www.procore.com/">Procore</a> (partial)) with client
-      code generation for
-      <a href="https://dotnet.microsoft.com/languages/csharp">C#</a> using
-      <a href="https://github.com/Azure/autorest">AutoRest</a> and
-      <a href="https://www.java.com/">Java</a> using
-      <a href="https://openapi-generator.tech/">OpenAPI Generator</a>.</li>
     <li>Developed tools for data synchronization to integrate
       <a href="https://www.bamboohr.com/">BambooHR</a> (via REST API) and
       <a href="https://www.viewpoint.com/products/spectrum">Viewpoint Spectrum</a>
@@ -173,25 +176,35 @@ ul + p {
       with <a href="https://www.python.org/">Python</a> bindings.
       <a href="https://ccodearchive.net/info/edit_distance.html">Contributed C
         library to <abbr title="Comprehensive C Archive Network">CCAN</abbr></a>.</li>
+    <li><a href="https://www.docker.com/">Docker</a>-ized and deployed a
+      scalable network service written in C++ to
+      <a href="https://cloud.google.com/kubernetes-engine/">Google Kubernetes
+        Engine</a>.</li>
+    <li>Authored <a href="https://www.openapis.org/">OpenAPI</a> definitions
+      for multiple REST APIs
+      (<a href="https://github.com/kevinoid/appveyor-swagger/">AppVeyor CI</a>,
+      <a href="https://www.bamboohr.com/">BambooHR</a>,
+      <a href="https://www.procore.com/">Procore</a> (partial)) with client
+      code generation for
+      <a href="https://dotnet.microsoft.com/languages/csharp">C#</a> using
+      <a href="https://github.com/Azure/autorest">AutoRest</a> and
+      <a href="https://www.java.com/">Java</a> using
+      <a href="https://openapi-generator.tech/">OpenAPI Generator</a>.</li>
     <li>Developed Excel-based job planning and analysis platforms integrated
       with <a href="https://www.viewpoint.com/products/spectrum">Viewpoint Spectrum</a> via <a href="https://en.wikipedia.org/wiki/SQL"><abbr title="Structured Query Language">SQL</abbr></a>.</li>
+    <!--
     <li>Developed Excel-based <abbr title="Profit and Loss">P&amp;L</abbr>
       analysis workbooks integrated with
       <a href="https://www.jonasconstruction.com/products/enterprise/">Jonas
         Enterprise</a> via <a href="https://en.wikipedia.org/wiki/SQL"><abbr title="Structured Query Language">SQL</abbr></a>.</li>
     <li>Developed web-based vehicle inspection forms with PDF-to-email
       rendering for a vehicle fleet in <a href="https://www.php.net/">PHP</a>.</li>
-    <!--
     <li>Developed an asynchronous JavaScript library for
       <a href="https://www.topazsystems.com/">Topaz</a> signature pads,
       including workarounds for issues identified with non-ASCII characters,
       to replace vendor-provided
       <a href="https://www.topazsystems.com/sdks/sigweb.html">SigWeb</a>
       software.</li>
-    <li><a href="https://www.docker.com/">Docker</a>-ized and deployed a
-      scalable network service written in C++ to
-      <a href="https://cloud.google.com/kubernetes-engine/">Google Kubernetes
-        Engine</a>.</li>
     <li>Migrated job estimation software to Azure for significantly reduced
       operating costs.</li>
     -->
@@ -263,6 +276,7 @@ ul + p {
 care provider serving over 1000 active clients and employees, across 10 regional
 offices.  Significantly improved information sharing between offices, data entry
 efficiency, and ability to gather operational analytics.</li>
+    <!-- FIXME:  Add EOB parser? -->
     <li>Configured, deployed, and maintained
       <a href="https://learn.microsoft.com/sql/relational-databases/replication/merge/merge-replication">MS
         SQL Server Merge Replication</a> to allow offline data entry and
@@ -280,9 +294,12 @@ efficiency, and ability to gather operational analytics.</li>
     <li>Created prototype for a historical information
     exploration website using
     <a href="https://developers.google.com/maps/">Google Maps</a>.</li>
+    <!-- FIXME:  Add Python/ArcGIS BMU work for Lisa?  Expand/clarify.
+    <li>Consulted in creation of Python Geoprocessing script in ArcGIS for
+    USGS</li> -->
     <li>Implemented stream <!--location -->prediction algorithm as an
-      <a href="https://www.arcgis.com/">ArcGIS</a> module for analysis of
-      digital elevation model
+      <a href="https://www.arcgis.com/">ArcGIS</a> module for digital
+      elevation model
       <a href="https://en.wikipedia.org/wiki/Lidar">LIDAR</a> data.</li>
   </ul>
 
@@ -309,6 +326,7 @@ efficiency, and ability to gather operational analytics.</li>
   <abbr title="Air Force Research Lab">AFRL</abbr>-invented strategy game) AI research
   projects.  Achievements include:</p>
   <ul>
+    <!-- <li>Creation of a asynchronous chess-playing agent.</li> -->
     <li>Development of a 3D chess-playing agent and a viewer supporting
     animations and status tracking in real time.</li>
     <li>Design and preliminary implementation of environment system
@@ -343,23 +361,28 @@ efficiency, and ability to gather operational analytics.</li>
         College of Engineering</a>.</li>
     <li>Cumulative GPA of 3.77.  Dean's List for Spring 2007, Fall 2006, Spring 2006.</li>
     <li>Specialization in mathematics:  Cryptography, Statistics, Discrete Mathematics.</li>
-    <li>Notable advanced courses: System Security, Web Info. Systems, Database Systems, Computer Networks.</li>
+    <!-- <li>Notable advanced courses: System Security, Web Info. Systems, Database Systems, Computer Networks.</li> -->
   </ul>
 
   <h2>Relevant Personal Experience</h2>
   <ul>
-    <li>Contributed patches to the Linux kernel:
-      <a href="https://lore.kernel.org/all/368129160298161a9eb40ad4f489458be6be3b6f.1654569774.git.kevin@kevinlocke.name/t/">fix awk-related build failure</a>,
-      <a href="https://lore.kernel.org/all/feb8a8339a67025dab3850e6377eb6f3a0e782ba.1587400635.git.kevin@kevinlocke.name/t/">fix keyboard input for ThinkPad Twist S230u</a>,
-      <a href="https://lore.kernel.org/all/137e14ca5f75179d23ee2b6408201ae022c88191.1598148862.git.kevin@kevinlocke.name/t/">log warnings from overlayfs</a>,
-      and <a href="https://lore.kernel.org/all/82b537e0ca5fa38b492413bd665c0198e6761015.1597944769.git.kevin@kevinlocke.name/t/">update overlayfs documentation</a>
-      <a href="https://lore.kernel.org/all/b36a429d7c563730c28d763d4d57a6fc30508a4f.1615216996.git.kevin@kevinlocke.name/t/">twice</a>.
-      Also
-      <a href="https://lore.kernel.org/all/20190312171205.GA12792@kevinolos/t/">submitted
-        a patch to significantly increase performance for some Intel Wi-Fi
-        chips</a>, which was declined.</li>
-    <li>Test Linux kernel release candidates.  Bisected and reported multiple
-      issues.
+    <li>Contributed
+      <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=grep&amp;q=kevin%40kevinlocke.name">multiple
+        patches to the Linux kernel</a>.
+      <!--
+      <ul>
+        <li><a href="https://lore.kernel.org/all/368129160298161a9eb40ad4f489458be6be3b6f.1654569774.git.kevin@kevinlocke.name/t/">Fix an awk-related build failure</a>.</li>
+        <li><a href="https://lore.kernel.org/all/feb8a8339a67025dab3850e6377eb6f3a0e782ba.1587400635.git.kevin@kevinlocke.name/t/">Fix keyboard input for ThinkPad Twist S230u</a>.</li>
+        <li><a href="https://lore.kernel.org/all/137e14ca5f75179d23ee2b6408201ae022c88191.1598148862.git.kevin@kevinlocke.name/t/">Log warnings from overlayfs for a likely error condition</a>.</li>
+        <li><a href="https://lore.kernel.org/all/82b537e0ca5fa38b492413bd665c0198e6761015.1597944769.git.kevin@kevinlocke.name/t/">Improve overlayfs documentation</a>
+      <a href="https://lore.kernel.org/all/b36a429d7c563730c28d763d4d57a6fc30508a4f.1615216996.git.kevin@kevinlocke.name/t/">twice</a>.</li>
+      <li><a href="https://lore.kernel.org/all/20190312171205.GA12792@kevinolos/t/">Significantly increase (65% on some workloads) performance for some
+          Intel Wi-Fi chips</a>, which was declined.</li>
+      </ul>
+      -->
+      Bisected and
+      <a href="https://lore.kernel.org/all/?q=kevin%40kevinlocke.name">reported
+        multiple issues</a> from <abbr title="Release Candidate">RC</abbr> testing.
       <!--
       <a href="https://lore.kernel.org/all/YEgnIp43%2F6kFn8GL@kevinlocke.name/t/">io_uring regression</a>,
       <a href="https://lore.kernel.org/all/YWyLigrybF6yzf6Y@kevinlocke.name/">overlayfs failure on NTFS</a>,
@@ -367,7 +390,7 @@ efficiency, and ability to gather operational analytics.</li>
       <a href="https://lore.kernel.org/all/X%2FelzOTOOJMAc+1e@kevinlocke.name/t/">USB-related kernel Oops</a>,
       <a href="https://lore.kernel.org/all/20171115164619.jm45l5n3pbuabu5q@kevinolos/t/">IPsec transport mode regression</a>
       -->
-      </li>
+    </li>
     <li>Develop and maintain <a href="https://www.npmjs.com/~kevinoid">~20
         packages on npm</a>.</li>
     <li><a href="https://github.com/request/request/pulls?q=is%3Apr+author%3Akevinoid+is%3Aclosed">Added
@@ -376,9 +399,8 @@ efficiency, and ability to gather operational analytics.</li>
         npm package</a>.</li>
     <li>Develop <a href="https://weewx.com/">WeeWX</a>
       <a href="https://github.com/weewx/weewx/pull/364">plugin for interactive
-      weather graphs</a> using <a href="https://plotly.com/javascript/">Plotly.js</a>.
-      Set up and publicly host a
-      <a href="https://sourdough.kevinlocke.name/weewx/">weather station</a>
+      weather graphs</a> using <a href="https://plotly.com/javascript/">Plotly.js</a>;
+      <a href="https://sourdough.kevinlocke.name/weewx/">publicly hosted</a>
       on a <a href="https://www.raspberrypi.com/">Raspberry Pi</a>.</li>
     <li>Test nightly builds of Firefox and Thunderbird.
       <a href="https://bugzilla.mozilla.org/buglist.cgi?query_format=advanced&amp;order=Importance&amp;emailtype1=exact&amp;emailreporter1=1&amp;email1=kevin%40kevinlocke.name">Over
@@ -388,44 +410,51 @@ efficiency, and ability to gather operational analytics.</li>
       <a href="https://bugs.debian.org/cgi-bin/pkgreport.cgi?archive=both;submitter=kevin%40kevinlocke.name">over
         100 bugs investigated</a>.</li>
     <li><a href="https://github.com/microsoft/winget-pkgs/issues?q=is%3Apr+author%3Akevinoid">Contributed
-        over 30 package versions</a> to
+        over 50 package versions</a> to
       <a href="https://learn.microsoft.com/windows/package-manager/winget/">Microsoft
         winget</a>.</li>
-    <li>Maintain and self-host personal website and email for over a decade
-      with <a href="https://httpd.apache.org/">Apache</a>,
-      <a href="https://www.postfix.org/">Postfix</a>, and various additional
+    <li>Self-hosted personal website and email for over a decade using
+      <a href="https://httpd.apache.org/">Apache</a>,
+      <a href="https://www.postfix.org/">Postfix</a>, and additional
       services.</li>
-    <li>Use <a href="https://en.wikipedia.org/wiki/IPv6"><abbr title="Internet Protocol version 6">IPv6</abbr></a> on managed networks and servers since 2009.</li>
     <!--
+    <li>Use <a href="https://en.wikipedia.org/wiki/IPv6"><abbr title="Internet Protocol version 6">IPv6</abbr></a>
+      on home and work networks and servers since 2009.</li>
     <li>Ran GNU/Linux on
       <a href="https://mirrors.edge.kernel.org/pub/linux/kernel/people/geoff/cell/README">PlayStation 3</a>
       (via <a href="https://en.wikipedia.org/wiki/OtherOS">OtherOS</a>)
       and <a href="https://en.wikipedia.org/wiki/Xbox_Linux">original Xbox</a> (via softmod).</li>
     <li>Contributed a patch to git to
       <a href="https://lore.kernel.org/all/80eeba2b2a58af2a5497f398beb5c03447c41f61.1653003552.git.kevin@kevinlocke.name/t/">fix a path-related regression</a></li>
-      -->
+    <li>Built rudimentary experimental electric car from an upgraded electric
+      golf cart.</li>
+    <li>Automotive repairs and maintenance on a Ford Ranger.</li>
+    <li>Bicycle repair, maintenance, and frequent riding of multiple bikes on
+      dirt and pavement.</li>
+    <li>Small-engine model rocketry.</li>
+    -->
   </ul>
 
   <h2>Technologies</h2>
   <ul>
     <li>Most proficient in
       <a href="https://dotnet.microsoft.com/languages/csharp">C#</a>,
-      <a href="https://www.java.com/">Java</a>,
       <a href="https://www.python.org/">Python</a>,
       <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a>,
       <a href="https://developer.mozilla.org/docs/Web/javascript">JavaScript</a>,
       <a href="https://en.wikipedia.org/wiki/SQL"><abbr title="Structured Query Language">SQL</abbr></a>,
+      <a href="https://www.java.com/">Java</a>,
       and
       <a href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html">shell scripting</a>
       on Linux and Windows systems.  Some experience with a multitude of
       other languages, platforms, and libraries.</li>
-    <li>Proficiency with a variety of development tools include
+    <li>Proficiency with a variety of development tools including
       <a href="https://visualstudio.microsoft.com/">Visual Studio</a>,
       <a href="https://git-scm.com/">git</a>,
-      <a href="https://www.gnu.org/software/make/">Make</a>,
+      <!-- <a href="https://www.gnu.org/software/make/">Make</a>, -->
       <a href="https://www.vim.org/">Vim</a>,
-      and <a href="https://eclipseide.org/">Eclipse</a>.  Some experience
-      with many others.</li>
+      <a href="https://eclipseide.org/">Eclipse</a>,
+      and many others.</li>
     <li>Extensive experience with
       <a href="https://www.debian.org/">Debian GNU/Linux</a> on mobile, desktop,
       and server platforms.</li>
