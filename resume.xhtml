@@ -11,6 +11,7 @@ I'm impressed by your interest.  I'd encourage you to let me know you saw this!
   <title>Kevin Locke - R&#xE9;sum&#xE9;</title>
   <meta name="copyright" content="&#xA9; 2024 Kevin Locke &lt;kevin@kevinlocke.name&gt;" />
   <meta name="date" content="2024-10-20 18:07:48-06:00"/>
+  <link rel="alternate" type="application/pdf" href="resume.pdf" title="PDF" />
   <style>
 a {
   /* Note: Normally I would advocate for links to be visibly different from
@@ -21,6 +22,18 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+footer {
+  border-top: thin solid black;
+  margin-top: 1em;
+  text-align: center;
+}
+footer a {
+  color: revert;
+  text-decoration: revert;
+}
+footer a:hover {
+  text-decoration: revert;
 }
 h1 {
   clear: both;
@@ -73,6 +86,9 @@ ul + p {
 @media print {
   abbr {
     text-decoration: none;
+  }
+  footer {
+    display: none;
   }
   html, body {
     margin: 0;
@@ -461,6 +477,10 @@ efficiency, and ability to gather operational analytics.</li>
     <li>Enjoy learning new languages, tools, techniques, and platforms
       suitable for a given problem.</li>
   </ul>
+
+  <footer>
+    <a rel="alternate" type="application/pdf" href="resume.pdf">Printable (<abbr title="Portable Document Format">PDF</abbr>) Version</a>
+  </footer>
 </body>
 </html>
 <!-- vim: set sts=2 sw=2 et : -->
