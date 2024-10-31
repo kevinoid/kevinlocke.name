@@ -93,6 +93,7 @@ RewriteRule "^(.*/)index$" "$1" [DPI,R=permanent]
 # This is for canonicalization, SEO, and security.
 # https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/
 # Note:  /.well-known/acme-challenge/ is excluded ACME SSL cert renewal checks.
+# Note:  /.well-known/mta-sts.txt is excluded for MTA-STS, 3xx redirects disallowed
 
 # First, handle absolute URLs in case rewriting has been done already
 RewriteRule "^https?://(www\.)?kevinlocke.name(.*)$" "https://kevinlocke.name$2" [R=permanent,L]
@@ -102,6 +103,7 @@ RewriteRule "^(https?://.*)$" "$1" [L]
 RewriteCond %{HTTP_HOST} =kevinwlocke.com [NC,OR]
 RewriteCond %{HTTP_HOST} =www.kevinwlocke.com [NC]
 RewriteCond %{REQUEST_URI} "!^/\.well-known/acme-challenge/"
+RewriteCond %{REQUEST_URI} "!^/\.well-known/mta-sts\.txt"
 RewriteRule ^/?(.*) "https://kevinlocke.name/$1" [R,L]
 
 # Canonicalize any other unexpected hostname to kevinlocke.name (permanently)
@@ -111,10 +113,12 @@ RewriteCond %{HTTP_HOST} !=ipv4.kevinlocke.name [NC]
 RewriteCond %{HTTP_HOST} !=ipv6.kevinlocke.name [NC]
 RewriteCond %{HTTP_HOST} !=testing.kevinlocke.name [NC]
 RewriteCond %{REQUEST_URI} "!^/\.well-known/acme-challenge/"
+RewriteCond %{REQUEST_URI} "!^/\.well-known/mta-sts\.txt"
 RewriteRule ^/?(.*) "https://kevinlocke.name/$1" [R=permanent,L]
 
 RewriteCond %{HTTPS} !=on
 RewriteCond %{REQUEST_URI} "!^/\.well-known/acme-challenge/"
+RewriteCond %{REQUEST_URI} "!^/\.well-known/mta-sts\.txt"
 RewriteRule ^/?(.*) "https://%{HTTP_HOST}/$1" [R=permanent,L]
 
 # Prevent access to .git directories
