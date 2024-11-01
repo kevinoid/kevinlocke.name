@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <!--
 Thanks for looking at the source of my resume!  I wrote it by hand in Vim.
-I'm impressed by your interest.  I'd encourage you to let me know you saw this!
+I'm impressed by your interest.  Let me know you saw this.
   -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,31 +23,25 @@ a {
 a:hover {
   text-decoration: underline;
 }
-footer {
-  border-top: thin solid black;
-  margin-top: 1em;
-  text-align: center;
-}
-footer a {
-  color: revert;
-  text-decoration: revert;
-}
-footer a:hover {
-  text-decoration: revert;
-}
 h1 {
-  clear: both;
   font-size: 2em;		/* Firefox default */
+  margin-top: 0;
   margin-bottom: 0.67em;	/* Firefox default */
-  text-align: center;
 }
 h2 {
-  clear: both;
   border-bottom: thin solid black;
   margin: 0.5em 0 0.1em 0;
 }
 h3 {
   margin: 0.1em 0;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+header + h2 {
+  margin-top: 0;
 }
 p {
   margin: 0.1em 0 0.5em 0;
@@ -65,7 +59,6 @@ ul + p {
   font-style: italic;
   margin-top: -0.89em;	/* Tied to h1 margin-bottom */
   margin-bottom: 0;
-  text-align: center;
 }
 .h1-subtitle + h2 {
   margin-top: 0;
@@ -75,20 +68,33 @@ ul + p {
   font-weight: normal;
   font-style: oblique;
 }
-#leftheader {
-  float: left;
-  text-align: left;
-}
-#rightheader {
-  float: right;
-  text-align: right;
+/* For printing and on wide screens, arrange header horizontally. */
+@media print, (min-width: 120ex) {
+  header {
+    flex-direction: row;
+  }
+  #leftheader {
+    line-height: 1;
+    text-align: left;
+    order: 1;
+  }
+  #midheader {
+    flex: 1;
+    order: 2;
+  }
+  #rightheader {
+    text-align: right;
+    order: 3;
+  }
+  #leftheader,
+  #rightheader {
+    /* Set uniform width to ensure #midheader content is centered */
+    width: 30ex;
+  }
 }
 @media print {
   abbr {
     text-decoration: none;
-  }
-  footer {
-    display: none;
   }
   html, body {
     margin: 0;
@@ -99,12 +105,9 @@ ul + p {
     font-size: 11.5pt;
   }
   h1 {
-    clear: none;
     font-size: 1.5rem;
-    margin-top: 0;
   }
   h2, .h1-subtitle {
-    clear: none;
     font-size: 1.1rem;
   }
   /* .expdates size must match h3 for baseline alignment */
@@ -125,16 +128,19 @@ ul + p {
   </style>
 </head>
 <body>
-  <div id="leftheader">
-    <a href="https://kevinlocke.name">https://kevinlocke.name</a><br />
-    <a href="https://github.com/kevinoid">https://github.com/kevinoid</a>
-  </div>
-  <div id="rightheader">
-    <a href="mailto:kevin@kevinlocke.name">kevin@kevinlocke.name</a>
-  </div>
-
-  <h1>Kevin Locke</h1>
-  <p class="h1-subtitle">Senior Software Engineer and Consultant</p>
+  <header>
+    <div id="midheader">
+      <h1>Kevin Locke</h1>
+      <p class="h1-subtitle">Senior Software Engineer and Consultant</p>
+    </div>
+    <div id="rightheader">
+      <a href="mailto:kevin@kevinlocke.name">kevin@kevinlocke.name</a>
+    </div>
+    <div id="leftheader">
+      <a href="https://kevinlocke.name">https://kevinlocke.name</a><br />
+      <a href="https://github.com/kevinoid">https://github.com/kevinoid</a>
+    </div>
+  </header>
 
   <h2>Summary</h2>
   <p>A generalist with a strong work ethic and a detail-oriented
@@ -410,9 +416,8 @@ efficiency, and ability to gather operational analytics.</li>
     <li>Develop and maintain <a href="https://www.npmjs.com/~kevinoid">~20
         packages on npm</a>.</li>
     <li><a href="https://github.com/request/request/pulls?q=is%3Apr+author%3Akevinoid+is%3Aclosed">Added
-        support for <code>Content-Encoding: gzip</code></a> to the popular
-      <a href="https://www.npmjs.com/package/request"><code>request</code>
-        npm package</a>.</li>
+        support for gzip content encoding</a> to the widely-used
+      <a href="https://www.npmjs.com/package/request">request npm package</a>.</li>
     <li>Develop <a href="https://weewx.com/">WeeWX</a>
       <a href="https://github.com/weewx/weewx/pull/364">plugin for interactive
       weather graphs</a> using <a href="https://plotly.com/javascript/">Plotly.js</a>;
