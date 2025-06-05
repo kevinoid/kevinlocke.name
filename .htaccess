@@ -116,6 +116,7 @@ RewriteCond %{REQUEST_URI} "!^/\.well-known/acme-challenge/"
 RewriteCond %{REQUEST_URI} "!^/\.well-known/mta-sts\.txt"
 RewriteRule ^/?(.*) "https://kevinlocke.name/$1" [R=permanent,L]
 
+# Ensure HTTPS is used for everything except ACME Challenge and MTA-STS
 RewriteCond %{HTTPS} !=on
 RewriteCond %{REQUEST_URI} "!^/\.well-known/acme-challenge/"
 RewriteCond %{REQUEST_URI} "!^/\.well-known/mta-sts\.txt"
