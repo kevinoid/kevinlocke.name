@@ -116,6 +116,16 @@ RewriteCond %{REQUEST_URI} "!^/\.well-known/acme-challenge/"
 RewriteCond %{REQUEST_URI} "!^/\.well-known/mta-sts\.txt"
 RewriteRule ^/?(.*) "https://kevinlocke.name/$1" [R=permanent,L]
 
+# Canonicalize requests for ipv4/ipv6 subdomain other than /client-ip
+# Allowing full access on these subdomains increases crawler traffic and
+# causes canonicalization issues with search indexes.
+RewriteCond %{HTTP_HOST} =ipv4.kevinlocke.name [NC,OR]
+RewriteCond %{HTTP_HOST} =ipv6.kevinlocke.name [NC]
+RewriteCond %{REQUEST_URI} "!^/\.well-known/acme-challenge/"
+RewriteCond %{REQUEST_URI} "!^/\.well-known/mta-sts\.txt"
+RewriteCond %{REQUEST_URI} "!^/client-ip"
+RewriteRule ^/?(.*) "https://kevinlocke.name/$1" [R=permanent,L]
+
 # Ensure HTTPS is used for everything except ACME Challenge and MTA-STS
 RewriteCond %{HTTPS} !=on
 RewriteCond %{REQUEST_URI} "!^/\.well-known/acme-challenge/"
