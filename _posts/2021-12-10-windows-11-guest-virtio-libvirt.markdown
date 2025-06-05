@@ -87,6 +87,16 @@ There are trade-offs to consider when choosing between BIOS and UEFI:
   workarounds, such as libvirt disk-only snapshots or QEMU disk snapshots
   managed manually, as [described by Chris
   Siebenmann](https://utcc.utoronto.ca/~cks/space/blog/linux/LibvirtUEFISnapshots).
+
+  **Update:** This has changed.  [virt-manager supports external snapshots (and
+  uses them by
+  default)](https://github.com/virt-manager/virt-manager/commit/5488ff4773bd2fe046edeec33163f1229c8da901).
+  ["internal snapshots [...] are no longer actively developed in
+  QEMU"](https://github.com/virt-manager/virt-manager/issues/800#issuecomment-2573072757).
+  However, they can't be deleted in Debian due to AppArmor preventing
+  blockcommit ([Bug 932456](https://bugs.debian.org/932456)) which is supported
+  in Ubuntu with a hack ([LP:
+  1692441](https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/1692441)).
 * The [Windows Driver Signing
   Policy](https://docs.microsoft.com/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-#signing-requirements-by-version)
   requires drivers to be WHQL-signed signed if Secure Boot is enabled on Windows
@@ -769,6 +779,12 @@ disk image.
 
 
 ## ChangeLog
+
+### 2025-06-05
+
+* Add updated information about libvirt handling of internal and external
+  snapshots to the [BIOS vs UEFI (with
+  SecureBoot)](#bios-vs-uefi-with-secureboot) section.
 
 ### 2022-10-22
 
