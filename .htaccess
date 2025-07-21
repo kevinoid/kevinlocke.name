@@ -79,10 +79,12 @@ RewriteRule "^inquiry/sdlblitspeed/sdlblitspeed\.php$" "/bits/2007/08/01/sdl-bli
 RewriteRule "^inquiry/sdlblitspeed/(.*)$" "/bits/2007/08/01/sdl-blit-speed-comparison/$1" [DPI,R=permanent]
 RewriteRule "^inquiry(/.*)?$" "/bits$1" [DPI,R=permanent]
 
-# Rewrite requests for php files to extensionless files, where absent
-# FIXME: Would like to apply this rule even when PHP file exists
-#        (to hide implementation details, since .php isn't permanent)
-#        But can't make it work with MultiViews, even excluding %{IS_SUBREQ}.
+# Permanently redirect requests to remove .php extension for URL preservation.
+# The previous PHP implementations have been replaced by static XHTML files.
+# URLs should avoid extensions, which are implementation details.
+#
+# FIXME: Would like to apply this rule even when PHP file exists,
+#        but can't make it work with MultiViews, even excluding %{IS_SUBREQ}.
 RewriteCond "%{REQUEST_FILENAME}" !-f
 RewriteRule "^(.*)\.php$" "$1" [DPI,R=permanent]
 
