@@ -86,6 +86,9 @@ RewriteRule "^inquiry(/.*)?$" "/bits$1" [DPI,R=permanent]
 # FIXME: Would like to apply this rule even when PHP file exists,
 #        but can't make it work with MultiViews, even excluding %{IS_SUBREQ}.
 RewriteCond "%{REQUEST_FILENAME}" !-f
+# Only redirect when the destination exists, to avoid obscuring errors and
+# wasting time and resources for additional request to get 404.
+RewriteCond "$1" -F
 RewriteRule "^(.*)\.php$" "$1" [DPI,R=permanent]
 
 # Use URL with trailing slash as canonical URL for index pages
