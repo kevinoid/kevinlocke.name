@@ -208,10 +208,6 @@ object {
 	z-index: -1;
 }
 
-.subscribe h4 {
-	display: inline;
-}
-
 .subscribe-links {
 	display: inline;
 	padding: 0;
