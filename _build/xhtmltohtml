@@ -49,6 +49,7 @@ convert_file() {
 	if [ "$infile" = - ] ; then
 		infile=$(mktemp -t xhtmltohtml-XXXXXXXX)
 		outfile=
+		# shellcheck disable=2064
 		trap "rm -f '$infile'" EXIT HUP INT PIPE QUIT TERM
 		cat > "$infile"
 	fi
