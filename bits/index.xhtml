@@ -27,6 +27,7 @@ Locke.</p>
 </div>
 
 {% for post in site.posts %}
+<article>
 <h2><a href="{{ post.url }}">{{ post.title | xml_escape }}</a></h2>
 <span class="postdate">Posted {{ post.date | date: "%B %d, %Y at %l:%M %p %Z" }}</span>
 by <span class="postauthor">Kevin Locke</span>{% if post.updated %}<br />
@@ -37,4 +38,5 @@ by <span class="postauthor">Kevin Locke</span>{% if post.updated %}<br />
   <a class="postreadmore" href="{{ post.url }}">Read more...</a>
 {% endif %}
 </div>
+</article>
 {% endfor %}
