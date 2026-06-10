@@ -21,11 +21,25 @@ run_xsltproc() {
 	local htmlver="$1"
 	local xhtmlfile="$2"
 
+	# The charset declaration output by xsltproc changed between
+	# 1.1.39-0exp1 and 1.1.43-0.1 due to a change in libxml2:
+	# https://gitlab.gnome.org/GNOME/libxml2/-/commit/46f05ea4d5a6b3ad86c148dc4cc0cfbfae01d5ff
+	#
+	# For HTML4, rewrite HTML5 <meta charset> to HTML4 <meta http-equiv>
+	# https://html.spec.whatwg.org/multipage/semantics.html#character-encoding-declaration
+	local sed_charset5to4
+	case "$htmlver" in
+	4*) sed_charset5to4='s/<meta[^>]*charset="\{0,1\}\([^" ]*\)[^>]*/<meta http-equiv="Content-Type" content="text/html; charset=\1"/' ;;
+	*) sed_charset5to4='' ;;
+	esac
+
 	# Replace the over-conservative us-ascii charset with utf-8
 	xsltproc --nodtdattr --novalid --nonet \
 			--stringparam htmlver "$htmlver" \
 			"$script_dir/xhtmltohtml.xsl" "$xhtmlfile" | \
-		sed 's/\(<meta[^>]*http-equiv="Content-Type"[^>]*\)us-ascii/\1utf-8/'
+		sed \
+			-e "$sed_charset5to4" \
+			-e 's/\(<meta[^>]*charset="\{0,1\}\)us-ascii/\1utf-8/'
 }
 
 convert_file() {
