@@ -4,7 +4,7 @@
 set -Ceu
 # set -o pipefail if supported
 # Note: Can't use `|| true`.  dash unconditionally exits with "Illegal option"
-# shellcheck disable=2039
+# shellcheck disable=3040
 case "$(set +o)" in *pipefail*) set -o pipefail ;; esac
 
 if ! [ -d _build ] ; then
