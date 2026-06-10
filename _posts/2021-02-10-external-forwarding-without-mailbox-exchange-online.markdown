@@ -26,7 +26,7 @@ accomplish this?
 
 <!--more-->
 
-### Mail-Enable Users
+## Mail-Enable Users
 
 The best solution I have come up, based on the Microsoft Answers question
 [Convert on-premise AD users to MailUsers (Exchange
