@@ -51,7 +51,7 @@ convert_file() {
 		outfile=
 		# shellcheck disable=2064
 		trap "rm -f '$infile'" EXIT HUP INT PIPE QUIT TERM
-		cat > "$infile"
+		cat >|"$infile"
 	fi
 
 	# Determine HTML version of output based on DTD of input
