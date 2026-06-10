@@ -7,15 +7,18 @@
          Choices: 5, 4strict, 4transitional, 4frameset -->
     <xsl:param name="htmlver" select="'5'"/>
 
-    <!-- Note:  encoding="us-ascii" forces entities in output for compat. -->
-    <xsl:output method="html" indent="yes" encoding="us-ascii"/>
+    <!--
+        Note: encoding="us-ascii" forces entities in output for compat.
 
-    <!-- Note:  Can't be wrapped in if/choose since outside template.
-                Instead written manually below (required for HTML5 anyway).
+        FIXME: Should pass version+doctype-public+doctype-system to xsl:output,
+        to get proper DOCTYPE, meta charset, etc.  But xsltproc doesn't support
+        param/variable and if/choose can't be used outside template.
     <xsl:output method="html" indent="yes" encoding="us-ascii"
+        version="4.01"
         doctype-public="-//W3C//DTD HTML 4.01//EN"
         doctype-system="http://www.w3.org/TR/html4/strict.dtd"/>
     -->
+    <xsl:output method="html" indent="yes" encoding="us-ascii"/>
 
     <!-- Should the contents of <script> be commented out? -->
     <xsl:param name="commentscripts" select="boolean(0)"/>
