@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-10 12:50:56-07:00
-updated: 2022-06-02 07:26:28-06:00
+updated: 2026-08-02 15:12:02-06:00
 title: Windows 11 Guest VM with VirtIO on Libvirt
 description: Notes on running Windows 11 (or 10) in a virtual machine with paravirtualized (virtio) drivers using libvirt.
 tags: [ windows ]
@@ -771,6 +771,34 @@ configure a disk optimization schedule to trim/discard unused space in the
 disk image.
 
 
+### Memory Integrity (HVCI)
+
+In recent builds of Windows 11 ([Insider Preview Build
+22593](https://blogs.windows.com/windows-insider/2022/04/06/announcing-windows-11-insider-preview-build-22593/#caption-attachment-175603)
+and later), the [Windows Security
+app](https://support.microsoft.com/en-US/Windows/Security/windows-security/windows-security-app-overview)
+warns when [Memory
+Integrity](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?tabs=security)
+(also known as Hypervisor-protected Code Integrity (HVCI)) is not enabled.
+This is the default when [Intel Mode Based Execution Control and AMD Guest Mode
+Execute
+Trap](https://en.wikipedia.org/wiki/Second_Level_Address_Translation#Mode_Based_Execution_Control)
+are not available, which means that Memory Integrity would rely on emulation
+via *Restricted User Mode* which "will have a bigger impact on performance".
+My systems showed a noticeable slowdown and higher host CPU usage, even at
+idle.  Therefore, I recommend disabling Memory Integrity, unless MBEC/GMET is
+available.
+
+Support for MBEC/GMET was added to Linux KVM in
+[2be108307eae](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=2be108307eae241359bb32ee259ba0b5378156aa)
+for v7.2-rc1.  (See [KVM: VMX: Introduce Intel Mode-Based Execute Control
+(MBEC)](https://lore.kernel.org/all/20251223054806.1611168-1-jon@nutanix.com/).)
+Host CPU support appears in `/proc/cpuinfo` as `ept_mode_based_exec`.  Guest
+support can be checked by the presence of `7` in `AvailableSecurityProperties`
+in the output of `Get-CimInstance -ClassName Win32_DeviceGuard -Namespace
+root\Microsoft\Windows\DeviceGuard`.
+
+
 ## Additional Resources
 
 * [QEMU: Preparing a Windows Guest on ArchWiki](https://wiki.archlinux.org/index.php/QEMU#Preparing_a_Windows_guest)
@@ -834,3 +862,7 @@ disk image.
 
 * Recommend `virtio-vga` with the `viogpudo` driver instead of QXL with the
   `qxldod` or `qxl` driver.
+
+### 2026-08-02
+
+* Add [Memory Integrity (HVCI)](#memory-integrity-hvci) section.
