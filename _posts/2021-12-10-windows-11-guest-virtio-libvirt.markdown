@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-10 12:50:56-07:00
-updated: 2026-08-02 15:12:02-06:00
+updated: 2026-08-28 10:13:43-06:00
 title: Windows 11 Guest VM with VirtIO on Libvirt
 description: Notes on running Windows 11 (or 10) in a virtual machine with paravirtualized (virtio) drivers using libvirt.
 tags: [ windows ]
@@ -371,12 +371,12 @@ Unfortunately, it has some limitations:
 
 - It is [limited to `height x width <=
   4x1024x1024`](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/560#issuecomment-894033021).
-- It requires additional work to configure automatic resolution switching,
-  which is not done by the installer
-  ([virtio-win/virtio-win-guest-tools-installer#32](https://github.com/virtio-win/virtio-win-guest-tools-installer/issues/32)).
-  From [Bug 1923886](https://bugzilla.redhat.com/show_bug.cgi?id=1923886#c4):
-  - Copy `viogpuap.exe` and `vgpusrv.exe` to a permanent location.
-  - Run `vgpusrv.exe -i` as Administrator to register the "VioGpu Resolution Service" Windows Service.
+- It requires additional work to configure automatic resolution switching (see [virtio-win/virtio-win-guest-tools-installer#32](https://github.com/virtio-win/virtio-win-guest-tools-installer/issues/32)):
+  1. For 0.1.302-1 or later, install the "VioGpu Resolution Service" feature (under "Viogpudo") during installation, which is not installed by default.
+  2. For versions before 0.1.302-1, follow the steps from
+     [Bug 1923886](https://bugzilla.redhat.com/show_bug.cgi?id=1923886#c4):
+     - Copy `viogpuap.exe` and `vgpusrv.exe` to a permanent location.
+     - Run `vgpusrv.exe -i` as Administrator to register the "VioGpu Resolution Service" Windows Service.
 - It doesn't support Windows 7
   ([virtio-win/kvm-guest-drivers-windows#591](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/591))
 - It is currently a [WDDM Display Only
@@ -866,3 +866,8 @@ root\Microsoft\Windows\DeviceGuard`.
 ### 2026-08-02
 
 * Add [Memory Integrity (HVCI)](#memory-integrity-hvci) section.
+
+### 2026-08-28
+
+* Updated [Video](#video) instructions to use the new "VioGpu Resolution
+  Service" feature added in 0.1.302-1.
